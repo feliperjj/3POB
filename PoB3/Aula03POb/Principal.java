@@ -100,12 +100,43 @@ public void AlterarAluno() {
 	    }
 	}
 	public void ExcluirAluno() {
-		
-	}
-	public void ListarAluno() {
-		
-	}
-	public void BuscarAluno() {
-		
-	}
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Digite a matrícula do aluno que deseja excluir: ");
+    String matriculaExcluir = sc.next();
+    
+    // Use um Iterator para remover com segurança o aluno da ArrayList
+    Iterator<Aluno> iterator = alunos.iterator();
+    while (iterator.hasNext()) {
+        Aluno aluno = iterator.next();
+        if (aluno.getMatricula().equals(matriculaExcluir)) {
+            iterator.remove();
+            System.out.println("Aluno removido com sucesso.");
+            return;
+        }
+    }
+    
+    System.out.println("Aluno com a matrícula " + matriculaExcluir + " não encontrado.");
+}
+
+public void ListarAluno() {
+    System.out.println("Lista de Alunos:");
+
+    for (Aluno aluno : alunos) {
+        System.out.println(aluno.toString());
+    }
+}
+
+public void BuscarAluno() {
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Digite a matrícula do aluno que deseja buscar: ");
+    String matriculaBuscar = sc.next();
+    
+    for (Aluno aluno : alunos) {
+        if (aluno.getMatricula().equals(matriculaBuscar)) {
+            System.out.println("Aluno encontrado:\n" + aluno.toString());
+            return;
+        }
+    }
+    
+    System.out.println("Aluno com a matrícula " + matriculaBuscar + " não encontrado.");
 }
