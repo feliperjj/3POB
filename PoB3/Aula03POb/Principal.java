@@ -84,3 +84,28 @@ public class Principal {
         }
     }
 }
+public void AlterarAluno() {
+		String matricula;
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Digite seu a matricula que você quer alterar: ");
+		matricula = sc.next();
+		//Percorre o vetor de alun para encontrar o objeto de aluno(altALuno), que equivaleria a alunos[i]
+		
+	    for (Aluno altAluno : alunos) {
+	    	if (altAluno.getMatricula() == matricula) {
+	    		System.out.println(altAluno.getMatricula());
+	    		
+	    	}
+	        
+	    }
+	}
+	public void ExcluirAluno() {
+		
+	}
+	public void ListarAluno() {
+		
+	}
+	public void BuscarAluno() {
+		
+	}
+}
